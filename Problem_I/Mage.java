@@ -6,9 +6,9 @@ public class Mage implements HeroPrototype {
     private int level;
     private int upgradePoints;
     private int xp;
-    private final String attack = "Magic Attack";
-    private final String defense = "Magic Shield";
-    private final String ability = "Fireball";
+    private final String ATTACK = "Magic Attack";
+    private final String DEFENSE = "Magic Shield";
+    private final String ABILITY = "Fireball";
 
     public Mage(String name, String appearance, int level, int upgradePoints, int xp) {
         this.name = name;
@@ -18,19 +18,29 @@ public class Mage implements HeroPrototype {
         this.xp = xp;
     }
 
+    public Mage(Mage target) {
+        if (target != null) {
+            this.name = target.name;
+            this.appearance = target.appearance;
+            this.level = target.level;
+            this.upgradePoints = target.upgradePoints;
+            this.xp = target.xp;
+        }
+    }
+
     @Override
-    public HeroPrototype clone() {
-        return new Mage(this.name, this.appearance, this.level, this.upgradePoints, this.xp);
+    public Mage clone() {
+        return new Mage(this);
     }
 
     @Override
     public String heroInfo() {
-        return "\nHero Info"+
+        return "\nHero Info" +
                 "\nType: Mage" +
-                "\nName: "+ this.name +
-                "\nDescription: "+ this.appearance +
-                "\nLevel: "+ this.level +
-                "\nXP: "+ this.xp;
+                "\nName: " + this.name +
+                "\nDescription: " + this.appearance +
+                "\nLevel: " + this.level +
+                "\nXP: " + this.xp;
     }
 
     @Override
@@ -38,7 +48,7 @@ public class Mage implements HeroPrototype {
         level++;
     }
 
-    // Getter / Setters
+    // Getters / Setters
     @Override
     public String getName() {
         return name;
@@ -86,16 +96,16 @@ public class Mage implements HeroPrototype {
 
     @Override
     public String getAttack() {
-        return attack;
+        return ATTACK;
     }
 
     @Override
     public String getDefense() {
-        return defense;
+        return DEFENSE;
     }
 
     @Override
     public String getAbility() {
-        return ability;
+        return ABILITY;
     }
 }
