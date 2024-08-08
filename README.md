@@ -16,3 +16,7 @@ Patrón Seleccionado: Observer
 ### Problema 3
 
 Patrón Seleccionado: 
+
+### Problema 4
+
+Patrón Seleccionado: 
