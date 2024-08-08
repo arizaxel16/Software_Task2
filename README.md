@@ -11,7 +11,7 @@ Patrón Seleccionado: Prototype
 
 ### Problema 2
 
-Patrón Seleccionado: 
+Patrón Seleccionado: Observer
 
 ### Problema 3
 
