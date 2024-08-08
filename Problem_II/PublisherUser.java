@@ -14,6 +14,14 @@ public class PublisherUser {
         recipient.getNotificationManager().notifyDevices(notification);
     }
 
+    public void pairDevice(GenericDevice device) {
+        this.notificationManager.addSubscriber(device);
+    }
+
+    public void unPair(GenericDevice device) {
+        this.notificationManager.removeSubscriber(device);;
+    }
+
     public NotificationManager getNotificationManager() {
         return notificationManager;
     }
