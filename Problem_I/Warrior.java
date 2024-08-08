@@ -29,7 +29,7 @@ public class Warrior implements HeroPrototype {
     }
 
     @Override
-    public Warrior clone() {
+    public HeroPrototype clone() {
         return new Warrior(this);
     }
 

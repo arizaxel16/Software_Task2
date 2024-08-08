@@ -29,7 +29,7 @@ public class Archer implements HeroPrototype {
     }
 
     @Override
-    public Archer clone() {
+    public HeroPrototype clone() {
         return new Archer(this);
     }
 

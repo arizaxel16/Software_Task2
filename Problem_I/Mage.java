@@ -29,7 +29,7 @@ public class Mage implements HeroPrototype {
     }
 
     @Override
-    public Mage clone() {
+    public HeroPrototype clone() {
         return new Mage(this);
     }
 
