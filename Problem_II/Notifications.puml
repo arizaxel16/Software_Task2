@@ -1,0 +1,53 @@
+@startuml Notifications
+
+class PublisherUser {
+    - String user
+    - NotificationManager notificationManager
+    + PublisherUser(String user)
+    + void sendMessage(PublisherUser recipient, String message)
+    + void pairDevice(GenericDevice device)
+    + void unPair(GenericDevice device)
+    + NotificationManager getNotificationManager()
+    + String getUser()
+}
+
+class NotificationManager {
+    - List<GenericDevice> subscribers
+    + void addSubscriber(GenericDevice device)
+    + void removeSubscriber(GenericDevice device)
+    + void notifyDevices(Notification notification)
+}
+
+interface GenericDevice {
+    + void update(Notification notification)
+}
+
+class Notification {
+    - String sender
+    - String msg
+    + Notification(PublisherUser user, String msg)
+    + String getSender()
+    + String getMsg()
+}
+
+class iPhone {
+    - String name
+    + iPhone(String name)
+    + void update(Notification notification)
+}
+
+class Tablet {
+    - String name
+    + Tablet(String name)
+    + void update(Notification notification)
+}
+
+PublisherUser --> NotificationManager : has
+PublisherUser --> Notification : creates
+NotificationManager --> GenericDevice : manages
+NotificationManager ..> GenericDevice : uses
+Notification --> PublisherUser : refers to
+GenericDevice <|-- iPhone
+GenericDevice <|-- Tablet
+
+@enduml
