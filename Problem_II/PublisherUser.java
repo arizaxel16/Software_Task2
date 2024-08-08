@@ -1,28 +1,21 @@
 package Problem_II;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PublisherUser {
     private String user;
-    List<GenericDevice> subscribers = new ArrayList<GenericDevice>();
+    private NotificationManager notificationManager;
 
     public PublisherUser(String user) {
         this.user = user;
+        this.notificationManager = new NotificationManager();
     }
 
-    public void trigger(Notification notification) {
-        for (GenericDevice subscriber : subscribers) {
-            subscriber.update(notification);
-        }
+    public void sendMessage(PublisherUser recipient, String message) {
+        Notification notification = new Notification(this, message);
+        recipient.getNotificationManager().notifyDevices(notification);
     }
 
-    public void subscribe(GenericDevice device) {
-        this.subscribers.add(device);
-    }
-
-    public void unsubscribe(GenericDevice device) {
-        this.subscribers.remove(device);
+    public NotificationManager getNotificationManager() {
+        return notificationManager;
     }
 
     public String getUser() {
