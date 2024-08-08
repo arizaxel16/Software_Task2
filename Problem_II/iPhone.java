@@ -12,7 +12,7 @@ public class iPhone implements GenericDevice {
         System.out.println(
             "\nReceived Notification on " + this.name +
             "\nSender: " + notification.getSender() +
-            "\nMessag: " + notification.getMsg()
+            "\nMessage: " + notification.getMsg()
         );
     }
 }
