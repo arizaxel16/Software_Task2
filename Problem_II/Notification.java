@@ -4,8 +4,8 @@ public class Notification {
     private String sender;
     private String msg;
 
-    public Notification(String sender, String msg) {
-        this.sender = sender;
+    public Notification(PublisherUser user, String msg) {
+        this.sender = user.getUser();
         this.msg = msg;
     }
 
