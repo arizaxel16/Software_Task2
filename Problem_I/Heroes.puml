@@ -1,0 +1,76 @@
+@startuml Heroes
+
+title Heroes
+
+interface HeroPrototype {
+    +HeroPrototype clone()
+    +String heroInfo()
+    +String getName()
+    +void setName(String name)
+    +String getAppearance()
+    +void setAppearance(String appearance)
+    +int getLevel()
+    +void lvlUp()
+    +int getUpgradePoints()
+    +void setUpgradePoints(int upgradePoints)
+    +int getXp()
+    +void setXp(int xp)
+    +String getAttack()
+    +String getDefense()
+    +String getAbility()
+}
+
+class Mage {
+    -String name
+    -String appearance
+    -int level
+    -int upgradePoints
+    -int xp
+    +static final String ATTACK = "Magic Attack"
+    +static final String DEFENSE = "Magic Shield"
+    +static final String ABILITY = "Fireball"
+    +Mage(String name, String appearance, int level, int upgradePoints, int xp)
+    +Mage(Mage target)
+    +HeroPrototype clone()
+    +String heroInfo()
+    +void lvlUp()
+}
+
+class Warrior {
+    -String name
+    -String appearance
+    -int level
+    -int upgradePoints
+    -int xp
+    +static final String ATTACK = "Sword Attack"
+    +static final String DEFENSE = "Shield Block"
+    +static final String ABILITY = "War Chant"
+    +Warrior(String name, String appearance, int level, int upgradePoints, int xp)
+    +Warrior(Warrior target)
+    +HeroPrototype clone()
+    +String heroInfo()
+    +void lvlUp()
+}
+
+class Archer {
+    -String name
+    -String appearance
+    -int level
+    -int upgradePoints
+    -int xp
+    +static final String ATTACK = "Bow Shot"
+    +static final String DEFENSE = "Camouflage"
+    +static final String ABILITY = "Arrow Rain"
+    +Archer(String name, String appearance, int level, int upgradePoints, int xp)
+    +Archer(Archer target)
+    +HeroPrototype clone()
+    +String heroInfo()
+    +void lvlUp()
+}
+
+HeroPrototype <|.. Mage
+HeroPrototype <|.. Warrior
+HeroPrototype <|.. Archer
+
+@enduml
+
