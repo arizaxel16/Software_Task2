@@ -1,0 +1,38 @@
+@startuml Orders
+
+title Order Processing System
+
+abstract class OrderProcessor {
+    +OrderProcessor()
+    +void processOrder()
+    -- abstract methods --
+    #void takingOrder()
+    #void checkingAvailability()
+    #abstract void preparingOrder()
+    #abstract void calculatingPrice()
+    #abstract void completingOrder()
+}
+
+class FoodOrder {
+    +void preparingOrder()
+    +void calculatingPrice()
+    +void completingOrder()
+}
+
+class DessertOrder {
+    +void preparingOrder()
+    +void calculatingPrice()
+    +void completingOrder()
+}
+
+class BeverageOrder {
+    +void preparingOrder()
+    +void calculatingPrice()
+    +void completingOrder()
+}
+
+OrderProcessor <|-- FoodOrder
+OrderProcessor <|-- DessertOrder
+OrderProcessor <|-- BeverageOrder
+
+@enduml
