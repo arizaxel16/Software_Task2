@@ -19,4 +19,4 @@ Patrón Seleccionado:
 
 ### Problema 4
 
-Patrón Seleccionado: 
+Patrón Seleccionado: Command
