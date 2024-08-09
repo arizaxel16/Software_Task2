@@ -1,5 +1,7 @@
 @startuml Notifications
 
+title Notification Management
+
 class PublisherUser {
     - String user
     - NotificationManager notificationManager
