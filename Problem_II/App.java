@@ -17,7 +17,7 @@ public class App {
         user_1.sendMessage(user_2, "Hello!");
         user_2.sendMessage(user_1, "Meeting 9:00 AM");
 
-        user_2.unPair(user_2Phone);;
+        user_2.unPair(user_2Phone);
         user_1.sendMessage(user_2, "Lunch 12:00 PM");
     }
 }
