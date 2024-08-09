@@ -15,7 +15,7 @@ Patrón Seleccionado: Observer
 
 ### Problema 3
 
-Patrón Seleccionado: 
+Patrón Seleccionado: Template
 
 ### Problema 4
 
