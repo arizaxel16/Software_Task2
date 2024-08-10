@@ -1,19 +1,16 @@
 package Problem_IV;
 
-public class ServiceManager
-{
+public class ServiceManager {
     private CommandManager commandManager;
     private TaskManager taskManager;
 
-    public ServiceManager(CommandManager commandManager, TaskManager taskManager)
-    {
+    public ServiceManager(CommandManager commandManager, TaskManager taskManager) {
         this.commandManager = commandManager;
         this.taskManager = taskManager;
     }
 
-    public void createTask(String task)
-    {
-        Command createTask = new NewTask (taskManager, task);
+    public void createTask(String task) {
+        Command createTask = new NewTask(taskManager, task);
         commandManager.executeCommand(createTask);
     }
 
