@@ -11,7 +11,6 @@ public class EditTask implements Command {
         this.task = task;
         this.newContent = newContent;
         this.previousContent = taskManager.getTask(task);
-        ;
     }
 
     @Override

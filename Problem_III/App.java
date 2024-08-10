@@ -6,7 +6,7 @@ public class App {
         OrderProcessor dessertOrder = new DessertOrder();
         OrderProcessor beverageOrder = new BeverageOrder();
 
-        System.out.println("Processing Food Order:");
+        System.out.println("\nProcessing Food Order:");
         foodOrder.processOrder();
 
         System.out.println("\nProcessing Dessert Order:");
