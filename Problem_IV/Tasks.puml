@@ -1,0 +1,89 @@
+@startuml Tasks
+
+title Tasks History
+
+class Task {
+    - description: String
+    + Task(description: String)
+    + getDescription(): String
+    + setDescription(description: String): void
+    + toString(): String
+}
+
+interface Command {
+    + execute(): void
+    + undo(): void
+}
+
+class CommandManager {
+    - history: Stack<Command>
+    + executeCommand(command: Command): void
+    + undoLastCommand(): void
+}
+
+class TaskManager {
+    + createTask(task: Task): void
+    + deleteTask(task: Task): void
+    + editTask(oldTask: Task, newTask: Task): void
+    + completeTask(task: Task): void
+    + uncompleteTask(task: Task): void
+}
+
+class ServiceManager {
+    - commandManager: CommandManager
+    - taskManager: TaskManager
+    + createTask(task: Task): void
+    + editTask(oldTask: Task, newTask: Task): void
+    + deleteTask(task: Task): void
+    + completeTask(task: Task): void
+    + undoLastAction(): void
+}
+
+class NewTask {
+    - taskManager: TaskManager
+    - task: Task
+    + execute(): void
+    + undo(): void
+}
+
+class EditTask {
+    - taskManager: TaskManager
+    - oldTask: Task
+    - newTask: Task
+    + execute(): void
+    + undo(): void
+}
+
+class DeleteTask {
+    - taskManager: TaskManager
+    - task: Task
+    + execute(): void
+    + undo(): void
+}
+
+class CompleteTask {
+    - taskManager: TaskManager
+    - task: Task
+    + execute(): void
+    + undo(): void
+}
+
+Command <|-- NewTask
+Command <|-- EditTask
+Command <|-- DeleteTask
+Command <|-- CompleteTask
+
+ServiceManager "1" *-- "1" CommandManager : uses >
+ServiceManager "1" *-- "1" TaskManager : uses >
+
+CommandManager "1" *-- "0..*" Command : manages >
+
+TaskManager "1" -- "0..*" Command : executes >
+TaskManager "1" *-- "0..*" Task : manages >
+
+NewTask "1" *-- "1" Task : operates on >
+EditTask "1" *-- "2" Task : operates on >
+DeleteTask "1" *-- "1" Task : operates on >
+CompleteTask "1" *-- "1" Task : operates on >
+
+@enduml
