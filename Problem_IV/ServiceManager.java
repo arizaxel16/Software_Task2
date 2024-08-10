@@ -9,22 +9,22 @@ public class ServiceManager {
         this.taskManager = new TaskManager();
     }
 
-    public void createTask(String task) {
+    public void createTask(Task task) {
         Command createTask = new NewTask(taskManager, task);
         commandManager.executeCommand(createTask);
     }
 
-    public void editTask(String task, String newContent) {
-        Command editTask = new EditTask(taskManager, task, newContent);
+    public void editTask(Task oldTask, Task newTask) {
+        Command editTask = new EditTask(taskManager, oldTask, newTask);
         commandManager.executeCommand(editTask);
     }
 
-    public void deleteTask(String task) {
+    public void deleteTask(Task task) {
         Command deleteTask = new DeleteTask(taskManager, task);
         commandManager.executeCommand(deleteTask);
     }
 
-    public void completeTask(String task) {
+    public void completeTask(Task task) {
         Command completeTask = new CompleteTask(taskManager, task);
         commandManager.executeCommand(completeTask);
     }

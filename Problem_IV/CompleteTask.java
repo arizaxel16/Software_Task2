@@ -2,9 +2,9 @@ package Problem_IV;
 
 public class CompleteTask implements Command {
     private TaskManager taskManager;
-    private String task;
+    private Task task;
 
-    public CompleteTask(TaskManager taskManager, String task) {
+    public CompleteTask(TaskManager taskManager, Task task) {
         this.taskManager = taskManager;
         this.task = task;
     }

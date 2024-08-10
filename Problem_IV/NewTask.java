@@ -2,9 +2,9 @@ package Problem_IV;
 
 public class NewTask implements Command {
     private TaskManager taskManager;
-    private String task;
+    private Task task;
 
-    public NewTask(TaskManager taskManager, String task) {
+    public NewTask(TaskManager taskManager, Task task) {
         this.taskManager = taskManager;
         this.task = task;
     }

@@ -2,24 +2,22 @@ package Problem_IV;
 
 public class EditTask implements Command {
     private TaskManager taskManager;
-    private String task;
-    private String newContent;
-    private String previousContent;
+    private Task oldTask;
+    private Task newTask;
 
-    public EditTask(TaskManager taskManager, String task, String newContent) {
+    public EditTask(TaskManager taskManager, Task oldTask, Task newTask) {
         this.taskManager = taskManager;
-        this.task = task;
-        this.newContent = newContent;
-        this.previousContent = taskManager.getTask(task);
+        this.oldTask = oldTask;
+        this.newTask = newTask;
     }
 
     @Override
     public void execute() {
-        taskManager.editTask(task, newContent);
+        taskManager.editTask(oldTask, newTask);
     }
 
     @Override
     public void undo() {
-        taskManager.editTask(task, previousContent);
+        taskManager.editTask(newTask, oldTask);
     }
 }
