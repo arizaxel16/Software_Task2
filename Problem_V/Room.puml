@@ -1,0 +1,49 @@
+@startuml Rooms
+
+title Room Decorator
+
+interface Room {
+    + descriptionRoom(): String
+    + cost(): int
+}
+
+abstract class RoomDecorator implements Room {
+    - decoratedRoom: Room
+    + RoomDecorator(decoratedRoom: Room)
+    + descriptionRoom(): String
+    + cost(): int
+}
+
+class BasicRoom implements Room {
+    + descriptionRoom(): String
+    + cost(): int
+}
+
+class AirConditioning extends RoomDecorator {
+    + descriptionRoom(): String
+    + cost(): int
+}
+
+class FreshFlowers extends RoomDecorator {
+    + descriptionRoom(): String
+    + cost(): int
+}
+
+class GourmetChocolate extends RoomDecorator {
+    + descriptionRoom(): String
+    + cost(): int
+}
+
+class HighQualityWine extends RoomDecorator {
+    + descriptionRoom(): String
+    + cost(): int
+}
+
+class Refrigerator extends RoomDecorator {
+    + descriptionRoom(): String
+    + cost(): int
+}
+
+RoomDecorator "1" *-- "1" Room : decorates
+
+@enduml

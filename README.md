@@ -20,3 +20,7 @@ Patrón Seleccionado: Template
 ### Problema 4
 
 Patrón Seleccionado: Command
+
+### Problema 5
+
+Patrón Seleccionado: Decorator
