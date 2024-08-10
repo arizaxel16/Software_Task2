@@ -4,9 +4,9 @@ public class ServiceManager {
     private CommandManager commandManager;
     private TaskManager taskManager;
 
-    public ServiceManager(CommandManager commandManager, TaskManager taskManager) {
-        this.commandManager = commandManager;
-        this.taskManager = taskManager;
+    public ServiceManager() {
+        this.commandManager = new CommandManager();
+        this.taskManager = new TaskManager();
     }
 
     public void createTask(String task) {
