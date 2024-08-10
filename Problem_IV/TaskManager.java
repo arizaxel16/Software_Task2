@@ -10,7 +10,7 @@ public class TaskManager {
     }
 
     public void editTask(String task, String newContent) {
-        System.out.println("Task edited\n Previous State: " + task + "\nCurrent State: " + newContent);
+        System.out.println("Task edited\nPrevious State: " + task + "\nCurrent State: " + newContent);
     }
 
     public void completeTask(String task) {
